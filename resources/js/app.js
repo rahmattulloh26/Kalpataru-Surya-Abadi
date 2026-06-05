@@ -1,5 +1,14 @@
 import './bootstrap';
 
+import { initHeroSwiper } from './components/swiper';
+import { initMap } from './components/map';
+
+// Jalankan semua script inisialisasi saat DOM sudah siap dimuat
+document.addEventListener('DOMContentLoaded', () => {
+    initHeroSwiper();
+    initMap();
+});
+
 window.onscroll = function () {
     const header = document.querySelector("header");
     const fixedNav = header.offsetTop;
@@ -33,7 +42,7 @@ function toggleContent(postId) {
 }
 
 // JavaScript untuk mengontrol dropdown About Us
-const produkDropdownBtn = document.getElementById("produk-dropdown-btn"); 
+const produkDropdownBtn = document.getElementById("produk-dropdown-btn");
 const produkDropdownMenu = document.getElementById("produk-dropdown-menu");
 const produkDropdownIcon = produkDropdownBtn
     ? produkDropdownBtn.querySelector("svg")
